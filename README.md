@@ -1,3 +1,3 @@
 # HelloYou-BO
 
-## *Tekstbased adventure waar je een shogun probeert te assasineren*
+## Hello You. Dit is mijn eerste beroepsopdracht op het Mediacollege Amsterdam. De opdracht is om een tekstbased applicatie te maken waar je verschillende eindens kan krijgen.
