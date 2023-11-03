@@ -83,7 +83,7 @@ function teststory2con0(){
         teststory2con0();
     }
 }
-teststory2con1();
+teststory2con0();
 //2.1
 function teststory2con2(){
     console.log("\n Tijdens het rusten krijg je honger.");
@@ -128,7 +128,7 @@ function teststory3() {
         retryFunction();
     } else if (choice === "2") {  
         console.log("Je loopt naar een markt toe en het lukt je om de verkoper te gaslighten.\n");
-        retryFunction();
+        teststory3con1();
     } else {
         console.log("Ongeldige keuze kies 1 of 2.\n");
         teststory3();
@@ -137,18 +137,223 @@ function teststory3() {
 teststory3();
 //3.1
 function teststory3con1(){
+    console.log("\nNa het eten ging je rond vragen naar informatie maar je kreeg niks te weten, tot dat er een man naar je toe loopt. Hij vertelt je dat de romurs waar zijn en als je hier terug komt met de shoguns hood krijg je je beloning.");
+    let choice = readlineSync.question("Ga verder rond vragen voor informatie zonder eten. (1) Probeer eten te stelen. (2): ");
 
+    if (choice === "1") {
+        console.log("Vetrouw de man en vraag hem voor meer informatie.\n");
+        teststory3con3();
+    } else if (choice === "2") {  
+        console.log("Vertrouw de man niet en zoek naar iemand anders.\n");
+        teststory3con2();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory3con1();
+    }
 }
 teststory3con1();
+//3.2
+function teststory3con2() {
+    console.log("\nDe man waarschuwt je dat je niet levend weg gaat komen als je niet achter de shogun aan gaat.");
+    let choice = readlineSync.question("Vetrouw de man wel aan vraag voor meer informatie. (1) Vertrouw de man toch niet. (2): ");
 
-//here copy paste yk
+    if (choice === "1") {
+        console.log("De man zegt dat je de goede keuze hebt gekozen.\n");
+        teststory3con3();
+    } else if (choice === "2") {  
+        console.log("Binnen 2 seconden ben door 3 mensen achter je in je rug gestoken.\n");
+        retryFunction();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory3con2();
+    }
+}
+teststory2con2();
+//3.3
+function teststory3con3() {
+    console.log("De man vertelt je over hoe de shogun altijd in zijn kasteel zit end dat jij veel te slap bent om hem te kunnen vermoorden.\n.");
+    let choice = readlineSync.question("Ga naar de kasteel toe. (1) Ga trainen om sterker te worden. (2): ");
 
+    if (choice === "1") {
+        console.log("Je begint met naar het kasteel toe te lopen.\n");
+        teststory4();
+    } else if (choice === "2") {  
+        console.log("Na een 10 minuten van trainen ben je te moe om verder te gaan en realiseer je dat je te slap bent om te trainen.\n");
+        teststory3con4();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory3con3();
+    }
+}
+teststory3con3();
+//3.4
+function teststory3con4() {
+    console.log("Je denkt na over hoe je sterker gaat worden.\n.");
+    let choice = readlineSync.question("Ga naar de kasteel toe en train niet. (1) Ga nog meer trainen om sterker te worden. (2): ");
+    if (choice === "1") {
+        console.log("Je begint met naar de kasteel toe te lopen.\n");
+        teststory4();
+    } else if (choice === "2") {  
+        console.log("Na 1 uur van trainen val je neer en krijg je een hartaanval.\n");
+        retryFunction();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory3con4();
+    }
+}
+teststory3con4();
+//4
+function teststory4() {
+    console.log("Je loopt in het bos voor de kasteel en je hoort allemaal geschreeuw in de richting van de kasteel.\n.");
+    let choice = readlineSync.question("Ga door naar het kasteel. (1) Keer om en ga terug naar de stad. (2): ");
+    if (choice === "1") {
+        console.log("Je bent voor de kasteel en je ziet overall bloed er is ook onder in de kasteel vuur.\n");
+        teststory4con1();
+    } else if (choice === "2") {  
+        console.log("Je kwam dezelfde man tegen die je had gewaarschuwd en hij stak je neer.\n");
+        retryFunction();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory4();
+    }
+}
+teststory4();
+//4.1
+function teststory4con1() {
+    console.log("Je bent bij de ingang van de kasteel en ziet dat alles zowat in brand staat.\n.");
+    let choice = readlineSync.question("Ren door het vuur heen. (1) Probeer omhoog te klimmen. (2): ");
+    if (choice === "1") {
+        console.log("Je rent er door heen.\n");
+        teststory4con2();
+    } else if (choice === "2") {  
+        console.log("Je klimt omhoog in een kamer die in brand staat.\n");
+        retryFunction();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory4con1();
+    }
+}
+teststory4con1();
+//4.2
+function teststory4con2() {
+    console.log("Je hoort boven je erg veel geschreeuw.\n.");
+    let choice = readlineSync.question("Ga naar boven toe. (1) Ga naar beneden toe. (2): ");
+    if (choice === "1") {
+        console.log("Je loopt naar boven toe en ziet veel doden lichamen die zijn neergestoken.\n");
+        teststory4con3();
+    } else if (choice === "2") {  
+        console.log("Je loopt naar beneden toe en de trap zakt in waardoor je op een zwaard valt.\n");
+        retryFunction();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory4con2();
+    }
+}
+teststory4con2();
+//4.3
+function teststory4con3() {
+    console.log("Je bent op de hoogste punt van de kasteel en ziet daar de shogun met zijn oorlogs armor aan hij heeft een bloedende lichaam en katana in zijn hand. Om hem heen zijn meerdere doden soldaten.\n.");
+    let choice = readlineSync.question("Pak een zwaard en val hem aan. (1) Probeer met hem te praten. (2): ");
+    if (choice === "1") {
+        console.log("Hij draaid zich om en heeft gelijk je hoofd er af gesneden met zijn katana.\n");
+        retryFunction();
+    } else if (choice === "2") {  
+        console.log("De shogun draaid zich om en kijkt naar je.\n");
+        teststory4con4();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory4con3();
+    }
+}
+teststory4con3();
+//4.4
+function teststory4con4() {
+    console.log("Hij vertelt hoe hij een ziekt heeft en dat hij langzaam dood zit te gaan, maar hij wou dood gaan terwijl hij deed waar hij het beste in was. Hij gooit ze zwaard naar je.\n.");
+    let choice = readlineSync.question("Snij ze hoofd er af. (1) Spaar hem. (2): ");
+    if (choice === "1") {
+        console.log("Je snijd met 1 slag ze hoofd er af.\n");
+        teststory5();
+    } else if (choice === "2") {  
+        console.log("Hij springt van de top van de kasteel naar beneden.\n");
+        teststory4con5();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory4con4();
+    }
+}
+teststory4con4();
+//4.5
+function teststory4con5() {
+    console.log("Je loopt naar beneden om ze hoofd te pakken.\n.");
+    let choice = readlineSync.question("Loop omlaag. (1) Klim omlaag. (2): ");
+    if (choice === "1") {
+        console.log("Terwijl je naar beneden loopt stort het gebouw neer en je wordt geplet.\n");
+        retryFunction();
+    } else if (choice === "2") {  
+        console.log("Na dat je omlaag bent geklommen zie je 5 soldaten om je heen en wordt je neer gestoken.\n");
+        retryFunction();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory4con5();
+    }
+}
+teststory4con5();
+//5
+function teststory5() {
+    console.log("Je klimt omlaag van de kasteel en rent weg.\n.");
+    let choice = readlineSync.question("ren naar de stad. (1) ren naar het bos. (2): ");
+    if (choice === "1") {
+        console.log("Je rent naar de stad toe en gaat naar de plek toe waar je de man had ontmoet.\n");
+        teststory5con1();
+    } else if (choice === "2") {  
+        console.log("De bos was inbrand en je bent dood verbrand.\n");
+        retryFunction();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory5();
+    }
+}
+teststory5();
+//5.1
+function teststory5con1() {
+    console.log("Je ziet een man bekleed dus je weet niet zeker of het hem is.\n.");
+    let choice = readlineSync.question("Geef het aan hem. (1) Steek hem neer met de katana. (2): ");
+    if (choice === "1") {
+        console.log("Je geeft het en daarna steekt hij in je buik.\n");
+        retryFunction();
+    } else if (choice === "2") {  
+        console.log("Je steekt hem neer en ziet dat het de homeless man was die de rumors tegen je had verteld.\n");
+        teststory5con2();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory5con1();
+    }
+}
+teststory5con1();
+//5.2
+function teststory5con2() {
+    console.log("Je ziet dat de man naar je toe loopt en hij vraagt om de hoofd te zien.\n.");
+    let choice = readlineSync.question("Geef hem de hoofd. (1) Steek hem neer. (2): ");
+    if (choice === "1") { 
+        truetest()
+        console.log("Hij knikt en zegt dat naar de hoofdstad bij de bar 2 halve glazen water moet halen en loopt weg.\n");
+        teststory5con3();
+    } else if (choice === "2") {  
+        console.log("Je steekt hem neer en daarna stak hij jouw ook neer.\n");
+        retryFunction();
+    } else {
+        console.log("Ongeldige keuze kies 1 of 2.\n");
+        teststory5con2();
+    }
+}
+teststory5con2();
 
+function teststory5con3() {
+    console.log("Na dat je naar de hoofdstad was gegaan gine je naar de bar en vroeg je om 2 halve glazen water de bar man zij dat je belong achter in is en hij wijst je de weg. Je kijkt achter in en ziet een kist vol met goud.")
+    console.log("THE END")
+}
 
-
-/*
 //truetest
-//here
 function truetest() {
     console.log("                                         / \                                                                          / \                                       ")
     console.log("                                        /  |                                                                         |   \                                      ")
@@ -197,7 +402,6 @@ function truetest() {
     
 }
 truetest();
-*/
 // retry
 function retryFunction () {
     let retry = readlineSync.question("Je bent dood gegaan! Wil je opnieuw proberen? (Ja of Nee): ");
